@@ -7,7 +7,26 @@ document.addEventListener("keydown", (event) => {
 
     return;
   }
+  if (event.keyCode === 40 || event.keyCode === 38) {
+    let x = localStorage.getItem('x');
+    if (typeof x !== 'string') {
+      x = 100;
+    }
+
+    x = Number(x) + (event.keyCode === 38 ? -1 : 1);
+
+    localStorage.setItem('x', x);
+    document.body.style = `--x: ${x}`;
+
+  }
   if (event.keyCode === 32) {
     alert(JSON.parse(answers)[currentNumber - 1]);
   }
+});
+document.addEventListener('DOMContentLoaded', () => {
+  let x = localStorage.getItem('x');
+  if (typeof x !== 'string') {
+    x = 100;
+  }
+  document.body.style = `--x: ${x}`;
 });

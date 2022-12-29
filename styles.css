@@ -32,6 +32,8 @@ body {
 	align-items: center;
 	height: calc((100vmin / var(--x)) * 60);
 	min-width: max-content;
+
+	user-select: none;
 }
 
 .empty {
@@ -49,6 +51,11 @@ body {
 	transform: scaleX(-1);
 }
 
+.middle-down {
+	display: inline-block;
+	transform: translateY(.5em);
+}
+
 .content img {
 	width: 1em;
 	vertical-align: bottom;
@@ -56,4 +63,10 @@ body {
 
 .content span {
 	display: inline-block;
+}
+
+.blue-char {
+	color: #2c72ff;
+	font-weight: 700;
+	font-family: Arial
 }
